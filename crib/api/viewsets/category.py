@@ -4,7 +4,6 @@ from crib.api.serializers.category import CategorySerializer
 
 
 class CategoryViewSet(ModelViewSet):
+    queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-    class Meta:
-        model = Category
