@@ -3,6 +3,6 @@ Project
 
 # Schema Model
 
-[Schema Drawio link](ttps://drive.google.com/file/d/1lxc0rmaBi07yqUezfHdgtsmNyRWrokZN/view?ts=66acf4a8)
+[Schema Drawio link](https://drive.google.com/file/d/1lxc0rmaBi07yqUezfHdgtsmNyRWrokZN/view?usp=drive_link)
 
 
