@@ -13,5 +13,32 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  web:
+    build: .
+
+    volumes:
+      - .:/app
+    expose:
+      - "8000"
+    depends_on:
+      - postgres
+    env_file:
+      - config/docker/.env  # Укажите путь к вашему .env файлу
+    #environment:
+    #  - DEBUG=1
+    #  - DJANGO_SECRET_KEY=your_secret_key
+    #  - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+    #  - DATABASE_URL=postgres://myuser:mypassword@db:5432/mydatabase
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./static:/static/
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+
 volumes:
   postgres_data:

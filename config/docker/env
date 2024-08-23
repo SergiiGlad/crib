@@ -1,0 +1,3 @@
+DEBUG = True
+
+CRIB_DB = postgres://user:password@localhost:5432/mydatabase
