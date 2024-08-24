@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  postgres:
+  local_db:
     image: postgres:latest
     container_name: postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+      POSTGRES_DB: crib
     ports:
       - "5432:5432"
     volumes:
@@ -21,7 +21,7 @@ services:
     expose:
       - "8000"
     depends_on:
-      - postgres
+      - local_db
     env_file:
       - config/docker/.env  # Укажите путь к вашему .env файлу
     #environment:
