@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+
+
+api_urls = [
+    path('', include('crib.api.urls')),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('crib/', include('crib.api.urls')),
+    path(settings.API_URL, include(api_urls)),
 ]
