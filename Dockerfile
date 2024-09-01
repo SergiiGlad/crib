@@ -19,11 +19,11 @@ RUN apt-get update && apt-get install -y \
 # Устанавливаем зависимости Python
 #COPY config/requirements/requirements.txt /app/
 
+# Копируем проект в рабочую директорию
 COPY . /app/
 
 RUN pip install -r config/requirements/requirements.txt
 
-# Копируем проект в рабочую директорию
-
 # Команда для запуска Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
+CMD ["sh", "-c", "./wait-for-it.sh local_db:5432 -- python manage.py migrate && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]
+
