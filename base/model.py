@@ -18,3 +18,6 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+    def __str__(self):
+        return f'{self.pk}.{self.name}' if getattr(self, 'name', None) else f'{self.pk}'
