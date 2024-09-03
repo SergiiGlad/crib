@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from oauth2_provider import urls as oauth2_urls
 
 
 api_urls = [
@@ -25,5 +26,6 @@ api_urls = [
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('o/', include(oauth2_urls)),
     path(settings.API_URL, include(api_urls)),
 ]
