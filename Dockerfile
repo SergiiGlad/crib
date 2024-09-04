@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
 
 # Устанавливаем зависимости Python
 #COPY config/requirements/requirements.txt /app/
+EXPOSE 8000
 
 # Копируем проект в рабочую директорию
 COPY . /app/
