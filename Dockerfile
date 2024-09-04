@@ -1,14 +1,14 @@
-# Используем официальный базовый образ Python
+# Use official Python image
 FROM python:3.12-slim
 
-# Устанавливаем переменные окружения
+# Install environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Создаем рабочую директорию
+# Create work directory
 WORKDIR /app
 
-# Устанавливаем зависимости системы
+# Install system depends
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     gcc \
@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y \
 #RUN  apt-get update && apt-get install -y \
 #    libpq-dev python-dev-is-python3
 
-# Устанавливаем зависимости Python
 #COPY config/requirements/requirements.txt /app/
 
 COPY config/requirements/requirements.txt /app/
