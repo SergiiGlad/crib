@@ -12,5 +12,3 @@ class Category(BaseModel):
         pass
         # db_table = 'category'
 
-    def __str__(self):
-        return self.name

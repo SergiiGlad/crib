@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'auth.middleware.current_user.CurrentUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -97,7 +98,6 @@ DATABASES = {
     )
 }
 
-print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
