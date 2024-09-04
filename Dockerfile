@@ -18,12 +18,14 @@ RUN apt-get update && apt-get install -y \
 
 # Устанавливаем зависимости Python
 #COPY config/requirements/requirements.txt /app/
-EXPOSE 8000
 
-# Копируем проект в рабочую директорию
+COPY config/requirements/requirements.txt /app/
+
+RUN pip install -r requirements.txt
+
+# Copy the project to the work directory
 COPY . /app/
 
-RUN pip install -r config/requirements/requirements.txt
 
 # Команда для запуска Gunicorn
 CMD ["sh", "-c", "./wait-for-it.sh local_db:5432 -- python manage.py migrate && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]
