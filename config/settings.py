@@ -51,6 +51,7 @@ THIRD_PART_APPS = [
 
 PROJECT_APPS = [
     'crib',
+    'users',
 ]
 
 
@@ -159,5 +160,5 @@ LOGGING = {
 
 API_URL = 'api/v1/'
 
-# AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'users.User'
 

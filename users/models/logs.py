@@ -3,7 +3,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 
 
-
 class Comment(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE,)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)

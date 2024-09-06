@@ -9,6 +9,3 @@ router.register('crib', CategoryViewSet, basename='crib')
 urlpatterns = [
     path('', include(router.urls)),
 ]
-
-print(urlpatterns)
-
