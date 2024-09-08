@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware.current_user.CurrentUserMiddleware',
+    'users.middleware.current_user.CurrentUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -99,6 +99,9 @@ DATABASES = {
     )
 }
 
+
+# This configures Redis as the datastore between Django + Celery
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
