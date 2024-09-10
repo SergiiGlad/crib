@@ -13,7 +13,7 @@ if [ -f "$ENV_FILE" ]; then
     # Read variables from .env file
     export $(grep -v '^#' "$ENV_FILE" | xargs)
     #echo $(grep -v '^#' "$ENV_FILE" | xargs)
-    echo $(grep -v '^#' "$ENV_FILE" | xargs)
+    echo $(grep -v '^#' "$ENV_FILE" | xargs).
     # Display variables from .env file
     #echo "Reading variables:"
     #echo $ENV_FILE

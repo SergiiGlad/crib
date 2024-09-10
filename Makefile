@@ -8,4 +8,4 @@ force_up:
 	docker compose up --force-recreate
 
 env_load:
-	config/docker/env_load.sh config/docker/.env
+	eval $(config/docker/env_load.sh config/docker/venv.env)
